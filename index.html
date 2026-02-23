@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İyi Ki Doğdun Cemre!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .cursive { font-family: 'Dancing+Script', cursive; }
+        /* Soft krem ve bej tonları */
+        .bg-cream-gradient { background: linear-gradient(135deg, #fdfbfb 0%, #f3ece4 100%); }
+        .glass-cream { background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.8); box-shadow: 0 8px 32px 0 rgba(139, 115, 85, 0.05); }
+        @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-15px); } 100% { transform: translateY(0px); } }
+        .floating { animation: float 4s ease-in-out infinite; }
+        .fade-in { animation: fadeIn 0.5s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+    </style>
+</head>
+<body class="bg-cream-gradient text-gray-800 overflow-x-hidden">
+
+    <section class="h-screen flex flex-col items-center justify-center relative px-4">
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute top-10 left-10 w-48 h-48 bg-rose-200/40 rounded-full blur-3xl floating"></div>
+            <div class="absolute bottom-20 right-10 w-64 h-64 bg-orange-200/40 rounded-full blur-3xl floating" style="animation-delay: 2s;"></div>
+        </div>
+
+        <h1 class="text-7xl md:text-9xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-rose-400 via-orange-300 to-yellow-500 reveal">
+            Cemre
+        </h1>
+        <p class="mt-6 text-lg md:text-2xl tracking-[0.3em] uppercase text-gray-500 font-light reveal">
+            Yeni Yaşın Kutlu Olsun ✨
+        </p>
+        
+        <a href="#patiler" class="mt-12 px-8 py-3 glass-cream rounded-full hover:bg-white transition-all duration-500 tracking-wider font-semibold text-gray-700 reveal">
+            Sürprizi Keşfet
+        </a>
+    </section>
+
+    <section id="patiler" class="py-24 px-6 max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl font-semibold mb-10 cursive text-rose-400 reveal">Günün Gerçek Yıldızları...</h2>
+        <p class="text-gray-500 mb-8 reveal">Bu özel günde onları unutmak olmazdı. Görmek için butonlara tıkla!</p>
+        
+        <div class="flex justify-center gap-4 mb-10 reveal">
+            <button onclick="showCat('kedi1')" class="px-6 py-3 glass-cream text-gray-700 font-semibold rounded-2xl hover:bg-rose-50 hover:text-rose-600 transition-colors shadow-sm">
+                🐾 Uykucu dost
+            </button>
+            <button onclick="showCat('kedi2')" class="px-6 py-3 glass-cream text-gray-700 font-semibold rounded-2xl hover:bg-orange-50 hover:text-orange-600 transition-colors shadow-sm">
+                🐾 Yaramaz dost
+            </button>
+        </div>
+
+        <div id="kedi1" class="hidden glass-cream p-4 rounded-3xl mx-auto max-w-lg aspect-square flex items-center justify-center fade-in">
+            <p class="text-gray-400 italic"><img src="resimler/WhatsApp Image 2026-02-23 at 11.46.04.jpeg" alt="kedi1"></p>
+            </div>
+
+        <div id="kedi2" class="hidden glass-cream p-4 rounded-3xl mx-auto max-w-lg aspect-square flex items-center justify-center fade-in">
+            <p class="text-gray-400 italic"><img src="resimler/WhatsApp Image 2026-02-23 at 11.46.03.jpeg" alt="kedi2"></p>
+            </div>
+    </section>
+
+    <section class="py-20 text-center px-6">
+        <div class="glass-cream max-w-3xl mx-auto p-12 rounded-[3rem] reveal shadow-sm">
+            <h2 class="text-3xl font-bold mb-6 italic text-gray-700">Küçük Bir Not</h2>
+            <p class="text-lg text-gray-600 leading-relaxed italic">
+                Hayatında hep şuanda olduğu gibi her zamanda mutlu, neşeli, azimli ve dirayetli olursun. Aynı zamanda kariyerindede
+                istediğin noktalara ulaşıp hayal ettiğin yurt dışı ülkelerinde de yaşamayacağından hiç şüphem yok. Tekrardan nice 
+                mutlu hedeflerine ulaşmış senelere. 
+            </p>
+            <div class="mt-8 text-rose-400 font-bold">—— Küçük çaplı arkadaşın Arda A</div>
+        </div>
+    </section>
+
+    <footer class="py-10 text-center text-gray-400 text-xs tracking-widest">
+        DİJİTAL DOĞUM GÜNÜ KARTI &copy; 2026 | CEMRE İÇİN ÖZENLE TASARLANDI
+    </footer>
+
+    <script>
+        // Animasyonlar için ScrollReveal ayarı
+        ScrollReveal().reveal('.reveal', {
+            delay: 200,
+            distance: '50px',
+            origin: 'bottom',
+            duration: 1000,
+            easing: 'ease-in-out',
+            reset: false
+        });
+
+        // Kedi fotoğraflarını gösterme fonksiyonu
+        function showCat(id) {
+            document.getElementById('kedi1').classList.add('hidden');
+            document.getElementById('kedi2').classList.add('hidden');
+            document.getElementById(id).classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
