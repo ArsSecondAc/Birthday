@@ -78,6 +78,16 @@
     </footer>
 
     <script>
+        // Tarayıcının eski kaydırma konumunu hatırlamasını engeller (Modern Çözüm)
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+
+        // Sayfa yüklendiğinde kesinlikle en üste çıkmasını sağlar
+        window.onload = function() {
+            window.scrollTo(0, 0);
+        };
+
         // Animasyonlar için ScrollReveal ayarı
         ScrollReveal().reveal('.reveal', {
             delay: 200,
@@ -96,4 +106,5 @@
         }
     </script>
 </body>
+
 </html>
